@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,11 +18,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Create object from ReportCard class
-        ReportCard card = new ReportCard();
+
+        ArrayList<Integer> grades = new ArrayList<Integer>(Arrays.asList(10,15,8,13,20));
+
+        ReportCard card = new ReportCard("Moi", 2017, "Udacity", grades);
 
         TextView reportCard = (TextView) findViewById(R.id.reportRoot);
 
-        reportCard.setText(card.showCard());
+        reportCard.setText(card.toString());
 
     }
 }
